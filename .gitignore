@@ -1,3 +1,7 @@
-# ignore all files in files
+# exclude everything
 files/
 Dockerfile
+
+# exception to the rule
+!files/validate/.keep
+!files/.keep
