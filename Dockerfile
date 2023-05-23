@@ -1,7 +1,7 @@
 FROM python:alpine
 
 WORKDIR /
-RUN apk add git
+RUN apk add --no-cache  git
 RUN git clone https://github.com/nyjx/gd-utils-py
 
 WORKDIR gd-utils-py

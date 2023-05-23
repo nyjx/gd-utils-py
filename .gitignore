@@ -1,5 +1,5 @@
 # exclude everything
-files/
+files/*
 
 # exception to the rule
 !files/validate/.keep
