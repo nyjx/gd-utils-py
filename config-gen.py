@@ -80,7 +80,7 @@ type = drive
 scope = drive
 service_account_file_path = {dir_name}
 service_account_file = {file_name}
-      """
+"""
 
       fh.write(rclone_sample)
 
