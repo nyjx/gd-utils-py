@@ -23,6 +23,7 @@ if __name__ == '__main__':
     if not os.path.isdir(args.directory): exit("SA 文件夹不存在")
 
     # prepare replace docker path is true
+    replace_Dir = False
     if args.replace: 
         replace_Dir = True ; 
         try:

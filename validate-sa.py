@@ -29,7 +29,7 @@ def testSA(real_file_id,service_account_file):
         return [code, details]
     except HttpError as http_error:
         # Handle errors from drive API.
-        details = http_error.reason
+        details = service_account_file + ' ' + http_error.reason
         code = str(http_error.status_code)
         return [code, details]
     except Exception as uerror:
