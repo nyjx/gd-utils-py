@@ -100,7 +100,32 @@ service_account_file_path = /root/rclone_sa/sb
 service_account_file = /root/rclone_sa/sb/yy1.json
 ```
 
-# Reference:
+## Docker
+首先要有个 Docker
+```
+curl -fsSL https://get.docker.com -o get-docker.sh ; sudo sh get-docker.sh
+```
+### 启动
+假设挂载目录为 `/home/sa-test`
+```
+docker run -d -v /home/sa-test:/gd-utils-py/files --name=gd-utils-py nyjx/gd-utils-py
+```
+待扫描的 SA 文件夹可以移动到 `/home/sa-test/validate` 中
+### 运行
+_参数参考上面具体说明_
+```
+docker exec -it gd-utils-py python3 validate-sa.py -r <XXXX00000DDDD> -b -v
+```
+```
+docker exec -it gd-utils-py python3 config-gen.py -v \
+-x "/home/user/sa-projects:/gd-utils-py/files/validate"
+```
+#### 退出
+```
+docker exec -it gd-utils-py touch exit
+```
+
+## Reference:
 https://developers.google.com/drive/api/guides/about-files
 
 https://github.com/iwestlin/gd-utils/blob/master/validate-sa.js

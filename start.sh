@@ -6,7 +6,6 @@ while true; do
         rm -rf /gd-utils-py/exit
         break
     fi
-    # wait
-    tail -f /dev/null
+    sleep 10
 done
 echo "exiting docker container"
